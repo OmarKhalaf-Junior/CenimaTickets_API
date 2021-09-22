@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'rest_framework.authtoken',       ## Enable Us Using The Token Authentication.
     'tickets',
 ]
 
@@ -129,5 +130,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-## Rest Framework
-REST_FRAMEWORK= {}
+## Rest Framework      'General Security'.
+REST_FRAMEWORK= {
+    'DEFAULT_AAUTHENTICATION_CLASSES':
+    ['rest_framework.authentication.TokenAuthentication']
+    
+    # 'DEFAULT_AUTHENTICATION_CLASSES':
+    # [
+    #   'rest_framework.authentication.BasicAuthentication',     ## username ++ password
+    #   'rest_framework.authentication.SessionAuthentication',
+    # ],
+    # 'DEFAULT_PERMISSION_CLASSES':
+    # ['rest_framework.permissions.IsAuthenticated']
+}
+
+
+## Username --> CinemaAdmin
+## Password --> 12052000
